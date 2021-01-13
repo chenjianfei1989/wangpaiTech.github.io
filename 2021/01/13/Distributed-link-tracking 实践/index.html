@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../../css/highlight.css">
-<link rel="stylesheet" href="../../css/widget.css">
-<link rel="stylesheet" href="../../css/rocket.css">
-<link rel="stylesheet" href="../../css/signature.css">
-<link rel="stylesheet" href="../../css/catalog.css">
-<link rel="stylesheet" href="../../css/livemylife.css">
+<link rel="stylesheet" href="../../../../css/highlight.css">
+<link rel="stylesheet" href="../../../../css/widget.css">
+<link rel="stylesheet" href="../../../../css/rocket.css">
+<link rel="stylesheet" href="../../../../css/signature.css">
+<link rel="stylesheet" href="../../../../css/catalog.css">
+<link rel="stylesheet" href="../../../../css/livemylife.css">
 
 
   
@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://wangpaitech.github.io/categories/链路跟踪/">
+  <link rel="canonical" href="https://wangpaitech.github.io/2021/01/13/Distributed-link-tracking 实践/">
   <title>
     
-    Andy&#39;s Blog
+    分布式链路跟踪 - Andy&#39;s Blog
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -289,8 +289,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*page*/
-        background-image: url('/img/header_img/archive_bg2.jpg');
+       /*post*/
+        background-image: url('/img/header_img/lml_bg.jpg');
       
     }
 
@@ -312,10 +312,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>And&#39;s Blog</h1>
-            <!--<hr class="small">-->
-            <span class="subheading"></span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#链路跟踪" title="链路跟踪">链路跟踪</a>
+              
+            </div>
+            <h1>分布式链路跟踪</h1>
+            <h2 class="subheading">Skywalking 实践</h2>
+            <span class="meta">
+              Posted by Chen Jianfei on
+              2021-01-13
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">4</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">981</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- 不蒜子统计 start -->
+            <span class="meta">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            <!-- WordCount end -->
+            
+
+
           </div>
           
         </div>
@@ -356,357 +386,292 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+	<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h2 id="SkyWalking-Agent跟踪微服务"><a href="#SkyWalking-Agent跟踪微服务" class="headerlink" title="SkyWalking Agent跟踪微服务"></a>SkyWalking Agent跟踪微服务</h2><p>![img](D:\blog\source_posts\Distributed-link-tracking 使用\clip_image002.jpg)</p>
+<h3 id="案例一："><a href="#案例一：" class="headerlink" title="案例一："></a>案例一：</h3><p>准备一个springboot程序，打成可执行jar包，写一个shell脚本，在启动项目的Shell脚本上，通过 -javaagent 参数进行配置SkyWalking Agent来跟踪微服务；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> SkyWalking Agent配置</span></span><br><span class="line">export SW_AGENT_NAME=springboot-demo #Agent名字,一般使用`spring.application.name` </span><br><span class="line">export SW_AGENT_COLLECTOR_BACKEND_SERVICES=127.0.0.1:11800 #配置 Collector 地址。</span><br><span class="line">export SW_AGENT_SPAN_LIMIT=2000 #配置链路的最大Span数量，默认为 300。</span><br><span class="line">export JAVA_AGENT=-javaagent:/usr/local/apache-skywalking-apm-bin/agent/skywalking-agent.jar</span><br><span class="line">java $JAVA_AGENT -jar springboot-demo-1.0.0.jar #jar启动</span><br></pre></td></tr></table></figure>
 
-      
-<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            01-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/01/13/Distributed-link-tracking 实践/" style="color: #0085a1">
-              <span>
-                分布式链路跟踪
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            01-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/01/13/Distributed-link-tracking/" style="color: #0085a1">
-              <span>
-                分布式链路跟踪
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            01-12
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/01/12/Distributed-transaction-Seata-实战篇/" style="color: #0085a1">
-              <span>
-                Spring Cloud Alibaba集成Seata
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            01-12
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2021/01/12/Distributed-transaction-Seata-概念篇/" style="color: #0085a1">
-              <span>
-                分布式事务概念
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
-          
-          <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2020/04/17/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-              </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-          </li>
-          
-        </ul>
-      </div>
-      
-
-
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        
-<!-- <h5>VISITORS</h5> -->
-<h5><a href="/">VISITORS</a></h5>
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
-        <!-- Featured Tags -->
-
-<section>
-  <!-- no hr -->
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#链路跟踪" title="链路跟踪" rel="2">链路跟踪</a>
-    
-    
-    
-    <a href="/tags/#分布式事务" title="分布式事务" rel="2">分布式事务</a>
-    
-    
-    
-    <a href="/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
-    
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Fat people have no future, either thin or die...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/V-Vincen">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://twitter.com/V_Vincen_">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.instagram.com/v_vincen_">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/WVincen">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        
-<!-- <h5>RECENT POSTS</h5> -->
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../2021/01/13/Distributed-link-tracking%20%E5%AE%9E%E8%B7%B5/">
-      <li>分布式链路跟踪</li>
-    </a>
-    
-    <a href="../../2021/01/13/Distributed-link-tracking/">
-      <li>分布式链路跟踪</li>
-    </a>
-    
-    <a href="../../2021/01/12/Distributed-transaction-Seata-%E5%AE%9E%E6%88%98%E7%AF%87/">
-      <li>Spring Cloud Alibaba集成Seata</li>
-    </a>
-    
-    <a href="../../2021/01/12/Distributed-transaction-Seata-%E6%A6%82%E5%BF%B5%E7%AF%87/">
-      <li>分布式事务概念</li>
-    </a>
-    
-    <a href="../../2020/04/17/Hexo-Theme-LiveMyLife/">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<!-- <h5>FRIENDS</h5> -->
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
+<p>在启动程序前加一个-javaagent 参数即可完成对程序的跟踪；</p>
+<h3 id="案例二："><a href="#案例二：" class="headerlink" title="案例二："></a>案例二：</h3><p>在tomcat中部署war包配置SkyWalking Agent来跟踪微服务；</p>
+<p>修改/usr/local/apache-tomcat-9.0.31/bin/catalina.sh 文件，在顶部第一行加上：</p>
+<p>CATALINA_OPTS=”$CATALINA_OPTS -javaagent:/usr/local/apache-skywalking-apm-bin/agent/skywalking-agent.jar”;</p>
+<p>export CATALINA_OPTS;</p>
+<p>如果tomcat端口与skywalking ui端口冲突的话，修改一下tomcat端口；</p>
+<p>测试，访问一下项目，然后进入 SkyWalking UI 界面查看跟踪情况，由于上传数据是异步的，访问完项目后，可能需要等几秒才能看到跟踪数据；</p>
+<h2 id="SkyWalking中三个概念"><a href="#SkyWalking中三个概念" class="headerlink" title="SkyWalking中三个概念"></a>SkyWalking中三个概念</h2><p><strong>服务(Service) ：</strong>表示对请求提供相同行为的一系列或一组工作负载，在使用Agent时，可以定义服务的名字，我们可以看到 Spring Boot 应用服务为 “11-springboot”，就是我们在环境变量 SW_AGENT_NAME 中所定义的；</p>
+<p><strong>服务实例(Service Instance) ：</strong>上述的一组工作负载中的每一个工作负载称为一个实例， 一个服务实例实际就是操作系统上的一个真实进程；</p>
+<p>这里我们可以看到 Spring Boot 应用的服务为 {agent_name}-pid:{pid}@{hostname}，由 Agent 自动生成；</p>
+<p><strong>端点(Endpoint) ：</strong>对于特定服务所接收的请求路径, 如HTTP的URI路径和gRPC服务的类名 + 方法签名；</p>
+<p>我们可以看到 Spring Boot 应用的一个端点，为API接口 /index；</p>
+<h2 id="在IDEA中使用Skywalking"><a href="#在IDEA中使用Skywalking" class="headerlink" title="在IDEA中使用Skywalking"></a>在IDEA中使用Skywalking</h2><p>在运行的程序配置jvm参数和环境变量参数，如下图所示：</p>
+<p>![img](D:\blog\source_posts\Distributed-link-tracking 使用\clip_image004.jpg)</p>
+<p>-javaagent:D:/dev/apache-skywalking-apm-bin/agent/skywalking-agent.jar</p>
+<p>SW_AGENT_COLLECTOR_BACKEND_SERVICES=127.0.0.1:11800;SW_AGENT_NAME=sharding</p>
+<h2 id="Skywalking告警通知"><a href="#Skywalking告警通知" class="headerlink" title="Skywalking告警通知"></a>Skywalking告警通知</h2><p>skywalking告警的核心由一组规则驱动，这些规则定义在config/alarm-settings.yml文件中，告警规则的定义分为三部分；</p>
+<ul>
+<li>告警规则：它们定义了应该如何触发度量警报，应该考虑什么条件；</li>
+<li>网络钩子(Webhook}：当警告触发时，哪些服务终端需要被通知；</li>
+<li>gRPC钩子：远程gRPC方法的主机和端口，告警触发后调用；</li>
 </ul>
+<p>为了方便，skywalking发行版中提供了默认的alarm-setting.yml文件，包括一些规则，每个规则有英文注释，可以根据注释得知每个规则的作用；</p>
+<p>比如service_resp_time_rule规则：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">service_resp_time_rule</span>:<span class="string"></span></span><br><span class="line">  <span class="meta">metrics-name</span>: <span class="string">service_resp_time</span></span><br><span class="line">  <span class="attr">op</span>: <span class="string">"&gt;"</span></span><br><span class="line">  <span class="attr">threshold</span>: <span class="string">1000</span></span><br><span class="line">  <span class="attr">period</span>: <span class="string">10</span></span><br><span class="line">  <span class="attr">count</span>: <span class="string">3</span></span><br><span class="line">  <span class="meta">silence-period</span>: <span class="string">5</span></span><br><span class="line">  <span class="attr">message</span>: <span class="string">Response time of service &#123;name&#125; is more than 1000ms in 3 minutes of last 10 minutes.</span></span><br></pre></td></tr></table></figure>
+
+<p>该规则表示服务{name}的响应时间在最近10分钟的3分钟内超过1000ms；</p>
+<p>只有我们的服务请求符合alarm-setting.yml文件中的某一条规则就会触发告警；</p>
+<h3 id="Webhook-回调通知"><a href="#Webhook-回调通知" class="headerlink" title="Webhook 回调通知"></a>Webhook 回调通知</h3><p>SkyWalking告警Webhook回调要求接收方是一个Web容器（比如tomcat服务），告警的消息会通过HTTP请求进行发送, 请求方法为POST, Content-Type为application/json, JSON格式基于 </p>
+<p>List&lt;org.apache.skywalking.oap.server.core.alarm.AlarmMessage&gt;的集合对象数据, 集合中的每个AlarmMessage包含以下信息：</p>
+<p>1、scopeId. 所有可用的Scope请查阅：<br>org.apache.skywalking.oap.server.core.source.DefaultScopeDefine；<br>2、name. 目标 Scope 的实体名称；<br>3、id0. Scope 实体的 ID；<br>4、id1. 未使用；<br>5、ruleName. 您在 alarm-settings.yml 中配置的规则名；<br>6、alarmMessage. 报警消息内容；<br>7、startTime. 告警时间, 位于当前时间与 UTC 1970/1/1 之间；<br>AlarmMessage类的代码：<br><img src="/2021/01/13/Distributed-link-tracking%20%E5%AE%9E%E8%B7%B5/.clip_image006.jpg" alt="img"></p>
 
 
         <hr>
-    
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/2021/01/13/Distributed-link-tracking/" data-toggle="tooltip" data-placement="top" title="分布式链路跟踪">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
         
-    <!-- <h5>ARCHIVES</h5> -->
-    <h5><a href="/archives/">ARCHIVES</a></h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/01/">January 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
-    </div>
+        <!-- tip start -->
+        <div class="tip">
+          <p>
+            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+          </p>
+        </div>
+        <!-- tip end -->
+        
 
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
 
-        <hr>
-    
-        <!-- Categories -->
-
-<!-- <h5>categories</h5> -->
-<h5><a href="/categories/">CATEGORIES</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#链路跟踪">
-      <li>链路跟踪</li>
-    </a>
-    
-    <a href="/categories/#分布式事务">
-      <li>分布式事务</li>
-    </a>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=分布式链路跟踪&body=Hi,I found this website and thought you might like it https://wangpaitech.github.io/2021/01/13/Distributed-link-tracking 实践/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
 </div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
+        <!-- Sharing End -->
+        
         <hr>
-    
-</div>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+<!-- gitalk start -->
+<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+<div id="gitalk-container"></div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+<script src="/js/comment/gitalk.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: '',
+    id: 'Wed Jan 13 2021 19:58:03 GMT+0800', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
+    perPage: 10 ,
+    pagerDirection: 'last',
+    createIssueManually: false ,
+    language: 'en'
+  });
+  gitalk.render('gitalk-container');
+
+  var gtFolded = () => {
+    setTimeout(function() {
+      let markdownBody = document.getElementsByClassName("markdown-body");
+      let list = Array.from(markdownBody);
+      list.forEach(item => {
+        if (item.clientHeight > 250) {
+          item.classList.add('gt-comment-body-folded');
+          item.style.maxHeight = '250px';
+          item.title = 'Click to Expand';
+          item.onclick = function() {
+            item.classList.remove('gt-comment-body-folded');
+            item.style.maxHeight = '';
+            item.title = '';
+            item.onclick = null;
+          };
+        }
+      })
+    }, 800);
+  }
+</script>
+
+<!-- gitalk end -->
+
+
+
+<!-- 2. gitment comment -->
+
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
     
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SkyWalking-Agent跟踪微服务"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">SkyWalking Agent跟踪微服务</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#案例一："><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">案例一：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#案例二："><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">案例二：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SkyWalking中三个概念"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">SkyWalking中三个概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#在IDEA中使用Skywalking"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">在IDEA中使用Skywalking</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Skywalking告警通知"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Skywalking告警通知</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Webhook-回调通知"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">Webhook 回调通知</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#链路跟踪" title="链路跟踪">链路跟踪</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->
