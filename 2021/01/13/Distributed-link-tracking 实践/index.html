@@ -217,6 +217,13 @@
 
           
           <li>
+            <a href="/archive/">Archives</a>
+          </li>
+          
+          
+
+          
+          <li>
             <a href="/categories/">Categories</a>
           </li>
           
@@ -225,13 +232,6 @@
           
           <li>
             <a href="/tags/">Tags</a>
-          </li>
-          
-          
-
-          
-          <li>
-            <a href="/archive/">Archives</a>
           </li>
           
           
@@ -330,11 +330,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">4</span> Minutes
+              Estimated Reading Time <span class="post-count">3</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">981</span> In Total
+              Words <span class="post-count">959</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -394,7 +394,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="SkyWalking-Agent跟踪微服务"><a href="#SkyWalking-Agent跟踪微服务" class="headerlink" title="SkyWalking Agent跟踪微服务"></a>SkyWalking Agent跟踪微服务</h2><p>![img](D:\blog\source_posts\Distributed-link-tracking 使用\clip_image002.jpg)</p>
+        <h2 id="SkyWalking-Agent跟踪微服务"><a href="#SkyWalking-Agent跟踪微服务" class="headerlink" title="SkyWalking Agent跟踪微服务"></a>SkyWalking Agent跟踪微服务</h2><p><img src="/2021/01/13/Distributed-link-tracking%20%E5%AE%9E%E8%B7%B5/clip_image002.jpg" alt="img"></p>
 <h3 id="案例一："><a href="#案例一：" class="headerlink" title="案例一："></a>案例一：</h3><p>准备一个springboot程序，打成可执行jar包，写一个shell脚本，在启动项目的Shell脚本上，通过 -javaagent 参数进行配置SkyWalking Agent来跟踪微服务；</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> SkyWalking Agent配置</span></span><br><span class="line">export SW_AGENT_NAME=springboot-demo #Agent名字,一般使用`spring.application.name` </span><br><span class="line">export SW_AGENT_COLLECTOR_BACKEND_SERVICES=127.0.0.1:11800 #配置 Collector 地址。</span><br><span class="line">export SW_AGENT_SPAN_LIMIT=2000 #配置链路的最大Span数量，默认为 300。</span><br><span class="line">export JAVA_AGENT=-javaagent:/usr/local/apache-skywalking-apm-bin/agent/skywalking-agent.jar</span><br><span class="line">java $JAVA_AGENT -jar springboot-demo-1.0.0.jar #jar启动</span><br></pre></td></tr></table></figure>
 
@@ -411,7 +411,7 @@
 <p><strong>端点(Endpoint) ：</strong>对于特定服务所接收的请求路径, 如HTTP的URI路径和gRPC服务的类名 + 方法签名；</p>
 <p>我们可以看到 Spring Boot 应用的一个端点，为API接口 /index；</p>
 <h2 id="在IDEA中使用Skywalking"><a href="#在IDEA中使用Skywalking" class="headerlink" title="在IDEA中使用Skywalking"></a>在IDEA中使用Skywalking</h2><p>在运行的程序配置jvm参数和环境变量参数，如下图所示：</p>
-<p>![img](D:\blog\source_posts\Distributed-link-tracking 使用\clip_image004.jpg)</p>
+<p><img src="/2021/01/13/Distributed-link-tracking%20%E5%AE%9E%E8%B7%B5/clip_image004.jpg" alt="img"></p>
 <p>-javaagent:D:/dev/apache-skywalking-apm-bin/agent/skywalking-agent.jar</p>
 <p>SW_AGENT_COLLECTOR_BACKEND_SERVICES=127.0.0.1:11800;SW_AGENT_NAME=sharding</p>
 <h2 id="Skywalking告警通知"><a href="#Skywalking告警通知" class="headerlink" title="Skywalking告警通知"></a>Skywalking告警通知</h2><p>skywalking告警的核心由一组规则驱动，这些规则定义在config/alarm-settings.yml文件中，告警规则的定义分为三部分；</p>
@@ -428,7 +428,7 @@
 <p>只有我们的服务请求符合alarm-setting.yml文件中的某一条规则就会触发告警；</p>
 <h3 id="Webhook-回调通知"><a href="#Webhook-回调通知" class="headerlink" title="Webhook 回调通知"></a>Webhook 回调通知</h3><p>SkyWalking告警Webhook回调要求接收方是一个Web容器（比如tomcat服务），告警的消息会通过HTTP请求进行发送, 请求方法为POST, Content-Type为application/json, JSON格式基于 </p>
 <p>List&lt;org.apache.skywalking.oap.server.core.alarm.AlarmMessage&gt;的集合对象数据, 集合中的每个AlarmMessage包含以下信息：</p>
-<p>1、scopeId. 所有可用的Scope请查阅：<br>org.apache.skywalking.oap.server.core.source.DefaultScopeDefine；<br>2、name. 目标 Scope 的实体名称；<br>3、id0. Scope 实体的 ID；<br>4、id1. 未使用；<br>5、ruleName. 您在 alarm-settings.yml 中配置的规则名；<br>6、alarmMessage. 报警消息内容；<br>7、startTime. 告警时间, 位于当前时间与 UTC 1970/1/1 之间；<br>AlarmMessage类的代码：<br><img src="/2021/01/13/Distributed-link-tracking%20%E5%AE%9E%E8%B7%B5/.clip_image006.jpg" alt="img"></p>
+<p>1、scopeId. 所有可用的Scope请查阅：<br>org.apache.skywalking.oap.server.core.source.DefaultScopeDefine；<br>2、name. 目标 Scope 的实体名称；<br>3、id0. Scope 实体的 ID；<br>4、id1. 未使用；<br>5、ruleName. 您在 alarm-settings.yml 中配置的规则名；<br>6、alarmMessage. 报警消息内容；<br>7、startTime. 告警时间, 位于当前时间与 UTC 1970/1/1 之间；<br>AlarmMessage类的代码：<br><img src="/2021/01/13/Distributed-link-tracking%20%E5%AE%9E%E8%B7%B5/clip_image006.jpg" alt="img"></p>
 
 
         <hr>
