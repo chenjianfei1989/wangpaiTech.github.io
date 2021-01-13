@@ -217,14 +217,14 @@
 
           
           <li>
-            <a href="/categories/">Categories</a>
+            <a href="/archive/">Archives</a>
           </li>
           
           
 
           
           <li>
-            <a href="/archive/">Archives</a>
+            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -442,17 +442,15 @@
 </li>
 </ul>
 <h2 id="对-Spring-Cloud-支持点"><a href="#对-Spring-Cloud-支持点" class="headerlink" title="对 Spring Cloud 支持点"></a>对 Spring Cloud 支持点</h2><ul>
-<li><p>通过 Spring MVC 提供服务的服务提供者，在收到 header 中含有 Seata 信息的 HTTP 请求时，可以自动还原 Seata 上下文。</p>
-</li>
-<li><p>支持服务调用者通过 RestTemplate 调用时，自动传递 Seata 上下文。</p>
-</li>
-<li><p>支持服务调用者通过 FeignClient 调用时，自动传递 Seata 上下文。</p>
-</li>
-<li><p>支持 SeataClient 和 Hystrix 同时使用的场景。</p>
-</li>
-<li><p>支持 SeataClient 和 Sentinel 同时使用的场景。</p>
-</li>
+<li>通过 Spring MVC 提供服务的服务提供者，在收到 header 中含有 Seata 信息的 HTTP 请求时，可以自动还原 Seata 上下文。</li>
+<li>支持服务调用者通过 RestTemplate 调用时，自动传递 Seata 上下文。</li>
+<li>支持服务调用者通过 FeignClient 调用时，自动传递 Seata 上下文。</li>
+<li>支持 SeataClient 和 Hystrix 同时使用的场景。</li>
+<li>支持 SeataClient 和 Sentinel 同时使用的场景。</li>
 </ul>
+<h2 id="更多例子"><a href="#更多例子" class="headerlink" title="更多例子"></a>更多例子</h2><blockquote>
+<p><a href="https://github.com/seata/seata-samples" target="_blank" rel="noopener">seata/seata-samples: seata-samples (github.com)</a></p>
+</blockquote>
 
 
         <hr>
@@ -591,7 +589,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Spring-Cloud-Alibaba集成Seata"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Spring Cloud Alibaba集成Seata</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目说明"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">项目说明</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目地址"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">项目地址</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#准备工作"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">准备工作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#配置数据库"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">配置数据库</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#创建-undo-log-表"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">创建 undo_log 表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#创建-示例中-业务所需要的数据库表"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">创建 示例中 业务所需要的数据库表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#启动-Seata-Server"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">启动 Seata Server</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#运行示例"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">运行示例</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#如何验证分布式事务成功？"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">如何验证分布式事务成功？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Xid-信息是否成功传递"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">Xid 信息是否成功传递</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#数据库中数据是否一致"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">数据库中数据是否一致</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#对-Spring-Cloud-支持点"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">对 Spring Cloud 支持点</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Spring-Cloud-Alibaba集成Seata"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Spring Cloud Alibaba集成Seata</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目说明"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">项目说明</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目地址"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">项目地址</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#准备工作"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">准备工作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#配置数据库"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">配置数据库</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#创建-undo-log-表"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">创建 undo_log 表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#创建-示例中-业务所需要的数据库表"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">创建 示例中 业务所需要的数据库表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#启动-Seata-Server"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">启动 Seata Server</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#运行示例"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">运行示例</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#如何验证分布式事务成功？"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">如何验证分布式事务成功？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Xid-信息是否成功传递"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">Xid 信息是否成功传递</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#数据库中数据是否一致"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">数据库中数据是否一致</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#对-Spring-Cloud-支持点"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">对 Spring Cloud 支持点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#更多例子"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">更多例子</span></a></li></ol>
         
         </div>
       </aside>
