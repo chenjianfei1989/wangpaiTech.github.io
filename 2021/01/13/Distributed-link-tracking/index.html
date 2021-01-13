@@ -217,14 +217,14 @@
 
           
           <li>
-            <a href="/categories/">Categories</a>
+            <a href="/about/">About</a>
           </li>
           
           
 
           
           <li>
-            <a href="/about/">About</a>
+            <a href="/categories/">Categories</a>
           </li>
           
           
@@ -334,7 +334,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">936</span> In Total
+              Words <span class="post-count">925</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -394,69 +394,108 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h4 id="What-is-skywalking？"><a href="#What-is-skywalking？" class="headerlink" title="What is skywalking？"></a>What is skywalking？</h4><p>分布式链路跟踪是分布式系统的应用程序性能监视工具，专为微服务、云原生架构和基于容器（Docker、K8s）架构而设计；</p>
-<p>也就是说Skywalking是用于微服务的“跟踪” ；</p>
-<p>对于一个大型的几十个、几百个微服务构成的微服务架构系统，通常会遇到下面一些问题，比如： </p>
-<p>如何串联整个调用链路，快速定位问题？</p>
-<p>如何理清各个微服务之间的依赖关系？</p>
-<p>如何进行各个微服务接口的性能分折？</p>
-<p>如何跟踪整个业务流程的调用处理顺序？</p>
-<p>Skywalking提供分布式追踪、服务网格遥测分析、度量聚合和可视化一体化解决方案；</p>
-<p>Skywalking是国人采用Java开发的，现在已经是apache下的一个等级项目；</p>
-<h4 id="Skywalking主要功能特性"><a href="#Skywalking主要功能特性" class="headerlink" title="Skywalking主要功能特性"></a>Skywalking主要功能特性</h4><p>1、多种监控手段，可以通过语言探针和service mesh获得监控的数据；</p>
-<p>2、支持多种语言自动探针，包括 Java，.NET Core 和 Node.JS；</p>
-<p>3、轻量高效，无需大数据平台和大量的服务器资源；</p>
-<p>4、模块化，UI、存储、集群管理都有多种机制可选；</p>
-<p>5、支持告警；</p>
-<p>6、优秀的可视化解决方案；</p>
-<p>官网：<a href="http://skywalking.apache.org/" target="_blank" rel="noopener">http://skywalking.apache.org/</a></p>
+        <blockquote>
+<p>官网: <a href="http://skywalking.apache.org/" target="_blank" rel="noopener">http://skywalking.apache.org/</a></p>
+<p>GitHub: <a href="https://github.com/apache/skywalking" target="_blank" rel="noopener">apache/skywalking: APM, Application Performance Monitoring System (github.com)</a></p>
 <p>下载：<a href="http://skywalking.apache.org/downloads/" target="_blank" rel="noopener">http://skywalking.apache.org/downloads/</a></p>
-<p>Github：<a href="https://github.com/apache/skywalking" target="_blank" rel="noopener">https://github.com/apache/skywalking</a></p>
+</blockquote>
+<h2 id="skywalking-什么是？"><a href="#skywalking-什么是？" class="headerlink" title="skywalking 什么是？"></a>skywalking 什么是？</h2><p>分布式链路跟踪是分布式系统的应用程序性能监视工具，专为微服务、云原生架构和基于容器（Docker、K8s）架构而设计；也就是说Skywalking是用于微服务的“跟踪” ；</p>
+<p>对于一个大型的几十个、几百个微服务构成的微服务架构系统，通常会遇到下面一些问题，比如： </p>
+<ul>
+<li><p>如何串联整个调用链路，快速定位问题？</p>
+</li>
+<li><p>如何理清各个微服务之间的依赖关系？</p>
+</li>
+<li><p>如何进行各个微服务接口的性能分折？</p>
+</li>
+<li><p>如何跟踪整个业务流程的调用处理顺序？</p>
+</li>
+</ul>
+<p>Skywalking提供分布式追踪、服务网格遥测分析、度量聚合和可视化一体化解决方案；Skywalking是国人采用Java开发的，现在已经是apache下的一个顶级项目；</p>
+<h2 id="Skywalking-主要功能特性"><a href="#Skywalking-主要功能特性" class="headerlink" title="Skywalking 主要功能特性"></a>Skywalking 主要功能特性</h2><ul>
+<li><p>多种监控手段，可以通过语言探针和service mesh获得监控的数据；</p>
+</li>
+<li><p>支持多种语言自动探针，包括 Java，.NET Core 和 Node.JS；</p>
+</li>
+<li><p>轻量高效，无需大数据平台和大量的服务器资源；</p>
+</li>
+<li><p>模块化，UI、存储、集群管理都有多种机制可选；</p>
+</li>
+<li><p>支持告警；</p>
+</li>
+<li><p>优秀的可视化解决方案；</p>
+</li>
+</ul>
 <p>使用公司：（国内非常多）</p>
 <p><a href="https://github.com/apache/skywalking/blob/master/docs/powered-by.md" target="_blank" rel="noopener">https://github.com/apache/skywalking/blob/master/docs/powered-by.md</a></p>
-<h4 id="Skywalking整体架构"><a href="#Skywalking整体架构" class="headerlink" title="Skywalking整体架构"></a>Skywalking整体架构</h4><p><img src="/2021/01/13/Distributed-link-tracking/clip_image002.png" alt="2d559e500ea828b2922ea75768d576a7"></p>
+<h2 id="Skywalking-整体架构"><a href="#Skywalking-整体架构" class="headerlink" title="Skywalking 整体架构"></a>Skywalking 整体架构</h2><p><img src="/2021/01/13/Distributed-link-tracking/clip_image002.png" alt="2d559e500ea828b2922ea75768d576a7"></p>
 <p>整个架构分成四部分：</p>
-<p>1、上部分Agent ：负责从应用中，收集链路信息，发送给 SkyWalking OAP 服务器；</p>
-<p>2、下部分 SkyWalking OAP ：负责接收Agent发送的Tracing数据信息，然后进行分析(Analysis Core)，存储到外部存储器(Storage)，最终提供查询(Query)功能；</p>
-<p>3、右部分Storage：Tracing数据存储，目前支持ES、MySQL、Sharding Sphere、TiDB、H2多种存储器，目前采用较多的是ES，主要考虑是SkyWalking开发团队自己的生产环境采用ES为主；</p>
-<p>4、左部分SkyWalking UI：负责提供控台，查看链路等等；</p>
-<h4 id="SkyWalking-环境搭建部署"><a href="#SkyWalking-环境搭建部署" class="headerlink" title="SkyWalking 环境搭建部署"></a>SkyWalking 环境搭建部署</h4><p><img src="/2021/01/13/Distributed-link-tracking/clip_image004.jpg" alt="img"></p>
-<p>1，下载 SkyWalking 软件包；</p>
-<p>2，搭建一个 SkyWalking OAP 和SkyWalking UI服务；</p>
-<p>3，启动一个Spring Boot应用，并配置SkyWalking Agent；</p>
+<ul>
+<li><p>上部分Agent ：负责从应用中，收集链路信息，发送给 SkyWalking OAP 服务器；</p>
+</li>
+<li><p>下部分 SkyWalking OAP ：负责接收Agent发送的Tracing数据信息，然后进行分析(Analysis Core)，存储到外部存储器(Storage)，最终提供查询(Query)功能；</p>
+</li>
+<li><p>右部分Storage：Tracing数据存储，目前支持ES、MySQL、Sharding Sphere、TiDB、H2多种存储器，目前采用较多的是ES，主要考虑是SkyWalking开发团队自己的生产环境采用ES为主；</p>
+</li>
+<li><p>左部分SkyWalking UI：负责提供控台，查看链路等等；</p>
+</li>
+</ul>
+<h2 id="SkyWalking-环境搭建部署"><a href="#SkyWalking-环境搭建部署" class="headerlink" title="SkyWalking 环境搭建部署"></a>SkyWalking 环境搭建部署</h2><p><img src="/2021/01/13/Distributed-link-tracking/clip_image004.jpg" alt="img"></p>
+<ul>
+<li><p>下载 SkyWalking 软件包；</p>
+</li>
+<li><p>搭建一个 SkyWalking OAP 和SkyWalking UI服务；</p>
+</li>
+<li><p>启动一个Spring Boot应用，并配置SkyWalking Agent；</p>
 <p>数据存储暂时先使用它默认的H2数据库存储，后续我们再使用其他存储；</p>
-<p><strong>1**</strong>、下载 SkyWalking 软件包**</p>
-<p>对于 SkyWalking 的软件包，有两种方式获取：</p>
-<p>手动编译</p>
-<p>官方包</p>
+</li>
+<li><p>下载 SkyWalking 软件包</p>
+</li>
+</ul>
+<h2 id="对于-SkyWalking-的软件包，有两种方式获取："><a href="#对于-SkyWalking-的软件包，有两种方式获取：" class="headerlink" title="对于 SkyWalking 的软件包，有两种方式获取："></a>对于 SkyWalking 的软件包，有两种方式获取：</h2><ul>
+<li><p>手动编译</p>
+</li>
+<li><p>官方包</p>
+</li>
+</ul>
 <p>一般情况下，我们建议使用官方包，手动编译也可以；</p>
 <p>从这里下载：<a href="http://skywalking.apache.org/downloads/" target="_blank" rel="noopener">http://skywalking.apache.org/downloads/</a></p>
-<p><strong>2**</strong>、SkyWalking OAP 搭建**</p>
+<ul>
+<li><p>SkyWalking OAP 搭建</p>
 <p>解压：tar -zxvf apache-skywalking-apm-8.1.0.tar.gz</p>
 <p>解压后即完成了安装，不需要做其他操作；</p>
-<p>切换：cd apache-skywalking-apm-bin</p>
+</li>
+<li><p>切换：cd apache-skywalking-apm-bin</p>
+</li>
+</ul>
 <p><img src="/2021/01/13/Distributed-link-tracking/clip_image006.jpg" alt="img"></p>
-<p>目录说明：</p>
-<p>agent #SkyWalking Agent</p>
-<p>bin #执行脚本</p>
-<p>config #SkyWalking OAP Server 配置文件</p>
-<p>LICENSE</p>
-<p>licenses</p>
-<p>NOTICE</p>
-<p>oap-libs #SkyWalking OAP Server</p>
-<p>README.txt</p>
-<p>tools</p>
-<p>webapp #SkyWalking UI</p>
-<p><strong>3**</strong>、启动 SkyWalking OAP 服务**</p>
-<p>切换到bin目录：./startup.sh</p>
-<p>启动后会启动两个服务，一个是skywalking-oap-server，一个是skywalking-web-ui；</p>
-<p>查看安装目录下的 ./logs 下的日志文件，检查两个服务的日志文件是否启动成功；</p>
-<p>skywalking-oap-server服务启动后会占用：11800 和 12800 两个端口；</p>
-<p>skywalking-web-ui服务会占用 8080 端口；</p>
-<p>如果想要修改SkyWalking UI服务的参数，可以编辑webapp/webapp.yml 配置文件，比如：</p>
+<h2 id="目录说明："><a href="#目录说明：" class="headerlink" title="目录说明："></a>目录说明：</h2><ul>
+<li><p>agent #SkyWalking Agent</p>
+</li>
+<li><p>bin #执行脚本</p>
+</li>
+<li><p>config #SkyWalking OAP Server 配置文件</p>
+</li>
+<li><p>LICENSE</p>
+</li>
+<li><p>licenses</p>
+</li>
+<li><p>NOTICE</p>
+</li>
+<li><p>oap-libs #SkyWalking OAP Server</p>
+</li>
+<li><p>README.txt</p>
+</li>
+<li><p>tools</p>
+</li>
+<li><p>webapp #SkyWalking UI</p>
+</li>
+</ul>
+<h2 id="启动-SkyWalking-OAP-服务"><a href="#启动-SkyWalking-OAP-服务" class="headerlink" title="启动 SkyWalking OAP 服务"></a>启动 SkyWalking OAP 服务</h2><p>切换到bin目录：./startup.sh</p>
+<p>启动后会启动两个服务，一个是skywalking-oap-server，一个是skywalking-web-ui；查看安装目录下的 ./logs 下的日志文件，检查两个服务的日志文件是否启动成功；skywalking-oap-server服务启动后会占用：11800 和 12800 两个端口；skywalking-web-ui服务会占用 8080 端口；如果想要修改SkyWalking UI服务的参数，可以编辑webapp/webapp.yml 配置文件，比如：</p>
 <p>server.port：SkyWalking UI服务端口，默认是8080；</p>
 <p>collector.ribbon.listOfServers：SkyWalking OAP服务地址数组，SkyWalking UI界面的数据是通过请求SkyWalking OAP服务来获得；</p>
-<p>3、访问SkyWalking UI界面：<a href="http://192.168.172.128:8080/" target="_blank" rel="noopener">http://192.168.172.128:8080/</a></p>
+<h2 id="访问SkyWalking-UI界面："><a href="#访问SkyWalking-UI界面：" class="headerlink" title="访问SkyWalking UI界面："></a>访问SkyWalking UI界面：</h2><p><a href="http://192.168.172.128:8080/" target="_blank" rel="noopener">http://192.168.172.128:8080/</a></p>
 <p><img src="/2021/01/13/Distributed-link-tracking/clip_image008.jpg" alt="img"></p>
 <p>页面的右下角可以中英文切换，可以切换选择要展示的时间区间的跟踪数据；</p>
 
@@ -597,7 +636,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#What-is-skywalking？"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">What is skywalking？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Skywalking主要功能特性"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Skywalking主要功能特性</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Skywalking整体架构"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Skywalking整体架构</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SkyWalking-环境搭建部署"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">SkyWalking 环境搭建部署</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#skywalking-什么是？"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">skywalking 什么是？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Skywalking-主要功能特性"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Skywalking 主要功能特性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Skywalking-整体架构"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Skywalking 整体架构</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SkyWalking-环境搭建部署"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">SkyWalking 环境搭建部署</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#对于-SkyWalking-的软件包，有两种方式获取："><span class="toc-nav-number">5.</span> <span class="toc-nav-text">对于 SkyWalking 的软件包，有两种方式获取：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#目录说明："><span class="toc-nav-number">6.</span> <span class="toc-nav-text">目录说明：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#启动-SkyWalking-OAP-服务"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">启动 SkyWalking OAP 服务</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#访问SkyWalking-UI界面："><span class="toc-nav-number">8.</span> <span class="toc-nav-text">访问SkyWalking UI界面：</span></a></li></ol>
         
         </div>
       </aside>
