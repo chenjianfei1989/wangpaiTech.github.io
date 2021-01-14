@@ -141,7 +141,7 @@
   <link rel="canonical" href="https://wangpaitech.github.io/2021/01/14/Dockerfile reference/">
   <title>
     
-    Dockerfile reference - Andy&#39;s Blog
+    Dockerfile reference 中引文 - Andy&#39;s Blog
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -210,14 +210,14 @@
 
           
           <li>
-            <a href="/about/">About</a>
+            <a href="/archive/">Archives</a>
           </li>
           
           
 
           
           <li>
-            <a href="/archive/">Archives</a>
+            <a href="/about/">About</a>
           </li>
           
           
@@ -290,7 +290,7 @@
   <style type="text/css">
     header.intro-header {
        /*post*/
-        background-image: url('');
+        background-image: url('/img/header_img/lml_bg.jpg');
       
     }
 
@@ -315,9 +315,11 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+              
             </div>
-            <h1>Dockerfile reference</h1>
-            <h2 class="subheading"></h2>
+            <h1>Dockerfile reference 中引文</h1>
+            <h2 class="subheading">Dockerfile</h2>
             <span class="meta">
               Posted by Chen Jianfei on
               2021-01-14
@@ -1647,7 +1649,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Dockerfile reference&body=Hi,I found this website and thought you might like it https://wangpaitech.github.io/2021/01/14/Dockerfile reference/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Dockerfile reference 中引文&body=Hi,I found this website and thought you might like it https://wangpaitech.github.io/2021/01/14/Dockerfile reference/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -1729,6 +1731,17 @@
       <!-- Catalog: Tabe of Content -->
       <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Dockerfile-reference"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Dockerfile reference</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#文档参考"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">文档参考</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Usage-用法"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Usage 用法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BuildKit"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">BuildKit</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Format-格式"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Format 格式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Parser-directives-解析器指令"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Parser directives 解析器指令</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#syntax-语法"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">syntax 语法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Official-releases-官方发布"><span class="toc-nav-number">2.5.1.</span> <span class="toc-nav-text">Official releases 官方发布</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#escape-逃跑"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">escape 逃跑</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Environment-replacement-环境更新"><span class="toc-nav-number">2.7.</span> <span class="toc-nav-text">Environment replacement 环境更新</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#dockerignore-file-dockerignore-文件"><span class="toc-nav-number">2.8.</span> <span class="toc-nav-text">.dockerignore file . dockerignore 文件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#FROM-来自"><span class="toc-nav-number">2.9.</span> <span class="toc-nav-text">FROM 来自:</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Understand-how-ARG-and-FROM-interact-了解-ARG-和-FROM-是如何相互作用的"><span class="toc-nav-number">2.9.1.</span> <span class="toc-nav-text">Understand how ARG and FROM interact 了解 ARG 和 FROM 是如何相互作用的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#RUN-快跑"><span class="toc-nav-number">2.10.</span> <span class="toc-nav-text">RUN 快跑</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Known-issues-RUN-已知问题-RUN"><span class="toc-nav-number">2.10.1.</span> <span class="toc-nav-text">Known issues (RUN) 已知问题(RUN)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CMD-中国医学博士学位"><span class="toc-nav-number">2.11.</span> <span class="toc-nav-text">CMD 中国医学博士学位</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#LABEL-标签"><span class="toc-nav-number">2.12.</span> <span class="toc-nav-text">LABEL 标签</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MAINTAINER-deprecated-维护人员-已弃用"><span class="toc-nav-number">2.13.</span> <span class="toc-nav-text">MAINTAINER (deprecated) 维护人员(已弃用)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#EXPOSE-曝光"><span class="toc-nav-number">2.14.</span> <span class="toc-nav-text">EXPOSE 曝光</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ENV-环境病毒"><span class="toc-nav-number">2.15.</span> <span class="toc-nav-text">ENV 环境病毒</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ADD-注意力缺乏症"><span class="toc-nav-number">2.16.</span> <span class="toc-nav-text">ADD 注意力缺乏症</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#COPY-收到"><span class="toc-nav-number">2.17.</span> <span class="toc-nav-text">COPY 收到</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ENTRYPOINT"><span class="toc-nav-number">2.18.</span> <span class="toc-nav-text">ENTRYPOINT</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Exec-form-ENTRYPOINT-example-Exec-形式的-ENTRYPOINT-示例"><span class="toc-nav-number">2.18.1.</span> <span class="toc-nav-text">Exec form ENTRYPOINT example Exec 形式的 ENTRYPOINT 示例</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Shell-form-ENTRYPOINT-example-Shell-表单-ENTRYPOINT-示例"><span class="toc-nav-number">2.18.2.</span> <span class="toc-nav-text">Shell form ENTRYPOINT example Shell 表单 ENTRYPOINT 示例</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Understand-how-CMD-and-ENTRYPOINT-interact-了解-CMD-和-ENTRYPOINT-如何相互作用"><span class="toc-nav-number">2.18.3.</span> <span class="toc-nav-text">Understand how CMD and ENTRYPOINT interact 了解 CMD 和 ENTRYPOINT 如何相互作用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#VOLUME-体积"><span class="toc-nav-number">2.19.</span> <span class="toc-nav-text">VOLUME 体积</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Notes-about-specifying-volumes-关于指定卷的注释"><span class="toc-nav-number">2.19.1.</span> <span class="toc-nav-text">Notes about specifying volumes 关于指定卷的注释</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#USER-用户"><span class="toc-nav-number">2.20.</span> <span class="toc-nav-text">USER 用户</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#WORKDIR-工作底线"><span class="toc-nav-number">2.21.</span> <span class="toc-nav-text">WORKDIR 工作底线</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ARG-精氨酸脱氢酶"><span class="toc-nav-number">2.22.</span> <span class="toc-nav-text">ARG 精氨酸脱氢酶</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Default-values-默认值"><span class="toc-nav-number">2.22.1.</span> <span class="toc-nav-text">Default values 默认值</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Scope-范围"><span class="toc-nav-number">2.22.2.</span> <span class="toc-nav-text">Scope 范围</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Using-ARG-variables-使用-ARG-变量"><span class="toc-nav-number">2.22.3.</span> <span class="toc-nav-text">Using ARG variables 使用 ARG 变量</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Predefined-ARGs-预定义的-ARGs"><span class="toc-nav-number">2.22.4.</span> <span class="toc-nav-text">Predefined ARGs 预定义的 ARGs</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Automatic-platform-ARGs-in-the-global-scope-全球范围内的自动平台-ARGs"><span class="toc-nav-number">2.22.5.</span> <span class="toc-nav-text">Automatic platform ARGs in the global scope 全球范围内的自动平台 ARGs</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Impact-on-build-caching-对构建缓存的影响"><span class="toc-nav-number">2.22.6.</span> <span class="toc-nav-text">Impact on build caching 对构建缓存的影响</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#ONBUILD"><span class="toc-nav-number">2.23.</span> <span class="toc-nav-text">ONBUILD</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#STOPSIGNAL-停止信号"><span class="toc-nav-number">2.24.</span> <span class="toc-nav-text">STOPSIGNAL 停止信号</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HEALTHCHECK-健康检查"><span class="toc-nav-number">2.25.</span> <span class="toc-nav-text">HEALTHCHECK 健康检查</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SHELL-壳牌"><span class="toc-nav-number">2.26.</span> <span class="toc-nav-text">SHELL 壳牌</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#External-implementation-features-外部实现特性"><span class="toc-nav-number">2.27.</span> <span class="toc-nav-text">External implementation features 外部实现特性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Dockerfile-examples-文件例子"><span class="toc-nav-number">2.28.</span> <span class="toc-nav-text">Dockerfile examples 文件例子</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
 
       <!-- Sidebar Container -->
       <div class="
@@ -1744,6 +1757,8 @@
             <a href="/tags/">FEATURED TAGS</a>
           </h5>
           <div class="tags">
+            
+            <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
             
           </div>
         </section>

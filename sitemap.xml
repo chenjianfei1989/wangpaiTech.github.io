@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://wangpaitech.github.io/about/index.html</loc>
+    <loc>https://wangpaitech.github.io/archive/index.html</loc>
     
     <lastmod>2021-01-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wangpaitech.github.io/archive/index.html</loc>
+    <loc>https://wangpaitech.github.io/about/index.html</loc>
     
     <lastmod>2021-01-12</lastmod>
     
@@ -115,6 +115,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://wangpaitech.github.io/tags/Docker/</loc>
+    <lastmod>2021-01-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -133,6 +140,13 @@
   
   <url>
     <loc>https://wangpaitech.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2021-01-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangpaitech.github.io/categories/%E5%AE%B9%E5%99%A8%E5%8C%96/</loc>
     <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
