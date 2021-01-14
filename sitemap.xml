@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangpaitech.github.io/2021/01/14/Dockerfile%20reference/</loc>
+    
+    <lastmod>2021-01-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangpaitech.github.io/2021/01/13/Distributed-link-tracking/</loc>
     
     <lastmod>2021-01-13</lastmod>
@@ -44,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://wangpaitech.github.io/archive/index.html</loc>
+    <loc>https://wangpaitech.github.io/about/index.html</loc>
     
     <lastmod>2021-01-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wangpaitech.github.io/about/index.html</loc>
+    <loc>https://wangpaitech.github.io/archive/index.html</loc>
     
     <lastmod>2021-01-12</lastmod>
     
@@ -74,7 +81,7 @@
 
   <url>
     <loc>https://wangpaitech.github.io/</loc>
-    <lastmod>2021-01-13</lastmod>
+    <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,28 +89,28 @@
   
   <url>
     <loc>https://wangpaitech.github.io/tags/%E9%93%BE%E8%B7%AF%E8%B7%9F%E8%B8%AA/</loc>
-    <lastmod>2021-01-13</lastmod>
+    <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wangpaitech.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</loc>
-    <lastmod>2021-01-13</lastmod>
+    <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wangpaitech.github.io/tags/Hexo/</loc>
-    <lastmod>2021-01-13</lastmod>
+    <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wangpaitech.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2021-01-13</lastmod>
+    <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -112,21 +119,21 @@
   
   <url>
     <loc>https://wangpaitech.github.io/categories/%E9%93%BE%E8%B7%AF%E8%B7%9F%E8%B8%AA/</loc>
-    <lastmod>2021-01-13</lastmod>
+    <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wangpaitech.github.io/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</loc>
-    <lastmod>2021-01-13</lastmod>
+    <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wangpaitech.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2021-01-13</lastmod>
+    <lastmod>2021-01-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
